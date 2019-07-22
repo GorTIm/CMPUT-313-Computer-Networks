@@ -1,0 +1,38 @@
+
+//  Specify which C source files should be compiled for this simulation
+
+compile		= "georouting.c mobility.c -lm"
+icontitle	= "%n"
+
+//  Define the area of our simulation
+
+mapwidth	= 400m
+mapheight	= 400m
+
+//  All mobile nodes just use their default attributes, with one WLAN link
+//  Comment out PDAs for fewer nodes (with C comments), or simply add more
+
+mobile PDA00 { wlan { } }
+mobile PDA01 { wlan { } }
+mobile PDA02 { wlan { } }
+mobile PDA03 { wlan { } }
+mobile PDA04 { wlan { } }
+
+/*
+mobile PDA05 { wlan { } }
+mobile PDA06 { wlan { } }
+mobile PDA07 { wlan { } }
+mobile PDA08 { wlan { } }
+mobile PDA09 { wlan { } }
+
+mobile PDA10 { wlan { } }
+mobile PDA11 { wlan { } }
+mobile PDA12 { wlan { } }
+mobile PDA13 { wlan { } }
+mobile PDA14 { wlan { } }
+mobile PDA15 { wlan { } }
+mobile PDA16 { wlan { } }
+mobile PDA17 { wlan { } }
+mobile PDA18 { wlan { } }
+mobile PDA19 { wlan { } }
+ */

@@ -1,0 +1,3 @@
+compile		 = "flooding2.c dll_basic.c nl_table.c"
+
+#include "AUSTRALIA.MAP"

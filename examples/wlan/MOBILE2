@@ -1,0 +1,10 @@
+compile		 = "mobile2.c clickwalk.c"
+
+mapwidth	 = 600
+mapheight	 = 400
+
+mobile mobile0 { wlan { } }
+mobile mobile1 { wlan { } }
+mobile mobile2 { wlan { } }
+mobile mobile3 { wlan { } }
+mobile mobile4 { wlan { } }

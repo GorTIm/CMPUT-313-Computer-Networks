@@ -1,0 +1,34 @@
+
+icontitle	= "%d"
+mapwidth	= 1000
+mapheight	= 800
+mapgrid		= 100
+
+compile		= "mobile3.c newswalk.o"
+
+mobile PDAa { wlan { } }
+mobile PDAb { wlan { } }
+mobile PDAc { wlan { } }
+mobile PDAd { wlan { } }
+mobile PDAe { wlan { } }
+mobile PDAf { wlan { } }
+mobile PDAg { wlan { } }
+mobile PDAh { wlan { } }
+mobile PDAi { wlan { } }
+mobile PDAj { wlan { } }
+mobile PDAk { wlan { } }
+mobile PDAl { wlan { } }
+mobile PDAm { wlan { } }
+mobile PDAn { wlan { } }
+mobile PDAo { wlan { } }
+mobile PDAp { wlan { } }
+mobile PDAq { wlan { } }
+mobile PDAr { wlan { } }
+mobile PDAs { wlan { } }
+mobile PDAt { wlan { } }
+mobile PDAu { wlan { } }
+mobile PDAv { wlan { } }
+mobile PDAw { wlan { } }
+mobile PDAx { wlan { } }
+mobile PDAy { wlan { } }
+mobile PDAz { wlan { } }

@@ -1,0 +1,30 @@
+// An Ethernet LAN
+//
+
+compile=    "lab3.c"
+outputfile= "out.%n"
+
+var cs_flag= "1"
+
+mapwidth=250m, mapheight=40m, mapgrid= 20m, mapscale= 0.3
+
+minmessagesize= 1000 bytes
+maxmessagesize= 1400 bytes
+
+messagerate= 50ms
+
+lansegment LAN { x= 10, y= 15, lan-bandwidth= 10Mbps }
+
+host h1 { x=  25, y= 25, address= 101, lan to LAN { } }
+host h2 { x=  50, y= 25, address= 102, lan to LAN { } }
+host h3 { x=  75, y= 25, address= 103, lan to LAN { } }
+host h4 { x= 100, y= 25, address= 104, lan to LAN { } }
+host h5 { x= 125, y= 25, address= 105, lan to LAN { } }
+
+host h6 { x= 150, y= 25, address= 106, lan to LAN { } }
+host h7 { x= 175, y= 25, address= 107, lan to LAN { } }
+host h8 { x= 200, y= 25, address= 108, lan to LAN { } }
+host h9 { x= 225, y= 25, address= 109, lan to LAN { } }
+host h10 { x= 230, y= 25, address= 110, lan to LAN { } }
+
+

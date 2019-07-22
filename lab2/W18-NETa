@@ -1,0 +1,21 @@
+// PING: based on TOPOLOGY.a
+//
+compile = "lab2-p1.c"
+
+
+bandwidth        = 60Kbps
+
+minmessagesize   = 6000bytes
+maxmessagesize   = 6000bytes
+
+messagerate      = 100ms
+propagationdelay = 2200ms
+
+probframeloss    = 0
+probframecorrupt = 0
+
+// Note: by default WAN links are bidirectional
+host West {x=100, y=50, address= 10, link to R1}
+router R1 {x=300, y=50, link to East}
+host East {x=500, y=50, address= 20}
+

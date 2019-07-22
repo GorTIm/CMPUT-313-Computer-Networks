@@ -1,0 +1,42 @@
+// An Ethernet LAN
+//
+
+compile=    "lab3.c"
+outputfile= "out.%n"
+
+mapwidth=400m, mapheight=50m, mapgrid= 20m, mapscale= 0.3
+
+var cs_flag= "1"
+
+minmessagesize= 1000  bytes
+maxmessagesize= 1400 bytes
+
+messagerate= 50ms
+
+lansegment LAN { x= 10, y= 15, lan-bandwidth= 10Mbps }
+
+host h1 { x=  25, y= 25, address= 101, lan to LAN { } }
+host h2 { x=  50, y= 25, address= 102, lan to LAN { } }
+host h3 { x=  75, y= 25, address= 103, lan to LAN { } }
+host h4 { x= 100, y= 25, address= 104, lan to LAN { } }
+host h5 { x= 125, y= 25, address= 105, lan to LAN { } }
+
+host h6 { x= 150, y= 25, address= 106, lan to LAN { } }
+host h7 { x= 175, y= 25, address= 107, lan to LAN { } }
+host h8 { x= 200, y= 25, address= 108, lan to LAN { } }
+host h9 { x= 225, y= 25, address= 109, lan to LAN { } }
+host h10 { x= 250, y= 25, address= 110, lan to LAN { } }
+
+host h11 { x= 275, y= 25, address= 111, lan to LAN { } }
+host h12 { x= 300, y= 25, address= 112, lan to LAN { } }
+host h13 { x= 325, y= 25, address= 113, lan to LAN { } }
+host h14 { x= 350, y= 25, address= 114, lan to LAN { } }
+host h15 { x= 375, y= 25, address= 115, lan to LAN { } }
+
+host h16 { x=  25, y= 40, address= 116, lan to LAN { } }
+host h17 { x=  50, y= 40, address= 117, lan to LAN { } }
+host h18 { x=  75, y= 40, address= 118, lan to LAN { } }
+host h19 { x= 100, y= 40, address= 119, lan to LAN { } }
+host h20 { x= 125, y= 40, address= 120, lan to LAN { } }
+
+

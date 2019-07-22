@@ -1,0 +1,29 @@
+                    Program report for Assignment1
+
+Name:WEIHAO HAN
+ID:1446915
+
+
+Design Overview: 
+                 1.Show basic information of each node
+                 2.enable the node to collect information of other nodes incident to it.
+                 3.Count the number of message the node received and transmittted
+
+Program Status:   
+
+The main difficulty is to fully understand the mechanism of CNET.
+For example, each protacol is run independently except the flame,So menbers in self-design
+structure belongs to each node itself, while menbers in flame can be share between two nodes. 
+This is the key to design structure for storing information of neighbour and the overall algorithm.
+
+
+Testing and Results:   
+
+By using the topology files provided in coures webpage, the program can be tested 
+under network with multiple nodes.When the time for sending message is short, its possible to encouter
+runtime error.
+
+ 
+Acknowledgments:
+
+               http://webdocs.cs.ualberta.ca/~c313/cnet-3.3.4-html/index.html

@@ -1,0 +1,22 @@
+
+This cnet protocol demonstrates the use of cnet's keyboard event
+and the Physical Layer.  Run me with:
+
+	cnet KEYBOARD
+
+The event handling function reboot_node() will first be called for
+each node.  reboot_node() informs cnet that the node is interested
+in the EV_KEYBOARDREADY and EV_PHYSICALREADY events.
+
+When EV_KEYBOARDREADY is raised, cnet will call keyboard(), which will
+read the input line using CNET_read_keyboard() and then transmit the
+line as a data frame, to the other node via link 1.
+As the frame will be assumed to be a C string (ending in a '\0' byte),
+it is important to send the '\0' byte too.
+
+When EV_PHYSICALREADY occurs, cnet calls frame_arrived(), which
+will read the frame from the Physical Layer and print it out.  Note
+the differing propagation delays in the topology file KEYBOARD.
+
+Note that this simple ``protocol'' will not work if there is
+corruption on the link (probframecorrupt != 0). Can you see why?

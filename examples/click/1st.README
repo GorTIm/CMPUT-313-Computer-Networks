@@ -1,0 +1,23 @@
+
+This simple cnet "protocol" demonstrates the use of cnet's debugging
+buttons, the Physical Layer, and checksums.  Execute this example with:
+
+	cnet CLICK
+
+The event handling function reboot_node() is first called for each
+node.  reboot_node() informs cnet that the node is interested in
+the EV_DEBUG0, EV_DEBUG1 and EV_PHYSICALREADY events.
+
+Labels are placed on the first and second debug buttons, corresponding
+to the two interesting EV_DEBUG? events.
+
+When EV_DEBUG0 is raised, cnet calls send_reliable(), which will format a
+message in a frame and transmit that frame to the other node via link 1.
+As the message will be assumed to be a C string (ending in a '\0'
+byte), it is important to send the '\0' byte too (hence, strlen()+1 ).
+Similarly, when EV_DEBUG1 occurs, send_unreliable() is called.
+
+When EV_PHYSICALREADY occurs, cnet calls frame_arrived(),
+to read the frame from the Physical Layer and report its contents.
+If the frame was corrupted in transmit, any non-alphanumeric bytes
+are printed as question marks.

@@ -1,0 +1,58 @@
+mapimage	= "europe1.gif"
+
+host London {
+    x=170, y=440
+    link to Paris
+}
+
+host Paris {
+    x=195, y=495
+    link to London
+}
+
+host Reykjavik {
+    x=50, y=142
+    link to London
+}
+
+host Oslo {
+    x=280, y=295
+    link to London
+    link to Reykjavik
+}
+
+host Madrid {
+    x=135, y=615
+    link to Paris
+}
+
+host Rome {
+    x=292, y=595
+    link to Paris
+    link to Madrid
+}
+
+host Stockholm {
+    x=350, y=300
+    link to Oslo
+    link to Helsinki
+}
+
+host Copenhagen {
+    x=314, y=370
+    link to Oslo
+    link to Stockholm
+}
+
+host Helsinki {
+    x=438, y=290
+    link to Stockholm
+}
+
+host Moscow {
+    x=570, y=336
+    link to Helsinki
+    link to Paris
+}
+
+

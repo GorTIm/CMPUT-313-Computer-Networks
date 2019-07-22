@@ -1,0 +1,31 @@
+
+compile		= "mobile6.c randomwalk.o"
+
+mapwidth	= 650
+mapheight	= 400
+
+icontitle	= "%d"
+drawlinks	= true
+mapgrid		= 50
+
+accesspoint AP1 {
+    icontitle	= "%n"
+    x = 150, y = 200
+
+    wan to AP2 { }
+    wlan { }
+}
+
+accesspoint AP2 {
+    icontitle	= "%n"
+    x = 500, y = 200
+
+    wan to AP1 { }
+    wlan { }
+}
+
+mobile PDAa { wlan { } }
+mobile PDAb { wlan { } }
+mobile PDAc { wlan { } }
+mobile PDAd { wlan { } }
+

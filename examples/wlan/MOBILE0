@@ -1,0 +1,27 @@
+
+compile		= "mobile0.c newswalk.o"
+
+mapwidth	= 700
+mapheight	= 500
+mapgrid		= 50
+
+icontitle	= "%a"
+
+mobile mobile0 { wlan { } }
+mobile mobile1 { wlan { } }
+mobile mobile2 { wlan { } }
+mobile mobile3 { wlan { } }
+mobile mobile4 { wlan { } }
+mobile mobile5 { wlan { } }
+mobile mobile6 { wlan { } }
+mobile mobile7 { wlan { } }
+
+mobile mobilea { wlan { } }
+mobile mobileb { wlan { } }
+mobile mobilec { wlan { } }
+mobile mobiled { wlan { } }
+mobile mobilee { wlan { } }
+mobile mobilef { wlan { } }
+mobile mobileg { wlan { } }
+mobile mobileh { wlan { } }
+mobile mobilei { wlan { } }

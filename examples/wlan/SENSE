@@ -1,0 +1,18 @@
+
+compile		= "sense.c"
+
+mapwidth	= 600
+mapheight	= 100
+
+icontitle	= "%n"
+
+mobile PDA00 { wlan { } }
+mobile PDA01 { wlan { } }
+mobile PDA02 { wlan { } }
+mobile PDA03 { wlan { } }
+mobile PDA04 { wlan { } }
+mobile PDA05 { wlan { } }
+mobile PDA06 { wlan { } }
+mobile PDA07 { wlan { } }
+mobile PDA08 { wlan { } }
+mobile PDA09 { wlan { } }

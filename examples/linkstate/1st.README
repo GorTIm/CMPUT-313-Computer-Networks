@@ -1,0 +1,13 @@
+
+This simple example demonstrates how a node can be informed about
+a change in a link's state with EV_LINKSTATE.  Run with:
+
+	cnet LINKSTATE
+
+If a link is changed with the right mouse button, or if the attributes
+linkmtbf and linkmttr are set in the topology file, link_changed()
+will be called with its third parameter set to the number of the
+link whose state has changed.
+
+This example determines if, and for how long, a node is isolated
+from the rest of the network.

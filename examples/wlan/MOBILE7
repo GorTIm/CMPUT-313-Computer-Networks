@@ -1,0 +1,30 @@
+
+compile		= "mobile7.c"
+
+mapwidth	= 600
+mapheight	= 600
+
+icontitle	= "%n"
+drawlinks	= true
+mapgrid		= 50
+
+mobile M00 { wlan { } }
+mobile M01 { wlan { } }
+mobile M02 { wlan { } }
+mobile M03 { wlan { } }
+mobile M04 { wlan { } }
+mobile M05 { wlan { } }
+mobile M06 { wlan { } }
+mobile M07 { wlan { } }
+mobile M08 { wlan { } }
+mobile M09 { wlan { } }
+mobile M10 { wlan { } }
+mobile M11 { wlan { } }
+mobile M12 { wlan { } }
+mobile M13 { wlan { } }
+mobile M14 { wlan { } }
+mobile M15 { wlan { } }
+mobile M16 { wlan { } }
+mobile M17 { wlan { } }
+mobile M18 { wlan { } }
+mobile M19 { wlan { } }

@@ -1,0 +1,27 @@
+//  This is a sample cnet topology file for "protocol.c".
+//
+//  Take a copy of both protocol.c and this file.
+//  You can then execute this introduction with the command:
+//
+//	cnet TOPOLOGY.a
+//
+//  If successful, cnet will compile your copy of protocol.c and produce
+//  protocol.cnet and then execute the "network" for the default 3 minutes.
+
+compile = "protocol.c"
+
+host perth {
+    x=100, y=50
+    address     = 302
+    messagerate = 1000ms
+
+    link to melbourne
+}
+
+host melbourne {
+    x=400, y=50
+    address     = 351
+    messagerate = 4000ms
+
+    link to perth
+}

@@ -1,0 +1,74 @@
+                                PROJECT REPORT for lab3
+Objectives:
+        Help get used to routing algorithms and LAN protocols. Gain experience of testing 
+        protocols.
+
+
+
+Part1:
+
+      1.seqno and MAXHOPS.
+        initial seqno=0, initial MAXHOPS=4.
+        It use  p.seqno = NL_nextpackettosend(p.dest) and define the macro of MAXHOPS.
+
+      2. Yes.   
+          When MAXHOPS = 1, Efficiency (bytes AL) / (bytes PL) = 34.23.
+          When MAXHOPS = 2, Efficiency (bytes AL) / (bytes PL) = 16.82.
+          When MAXHOPS = 3, Efficiency (bytes AL) / (bytes PL) = 9.82
+
+          Overall,as MAXHOPS increase, the efficiency decrease.
+
+      3. It computes all links except the one that it arrives by returning an int indicating
+      the link desired.  
+
+
+Part2:
+        Design Overview:
+            1 This protocol support two modes of operation, with or without  carrier sensing
+            by settng a control variable
+
+            2 This protocol implement Ethernet CSMA/CD Algorithm by using Exponential Backoff
+            to control pattern of retransmission.
+
+            3 Only one  LAN controller is kept, and it performs different functionality mainly
+            depending on the activity state
+
+        Program Status:
+              Program works good with no error occur. 
+              
+              Its important to figure out what exactly need to do 
+              in order to update the state of lanc.
+
+        Testing:
+               test by changing the cs_flag and printing error info in output files
+
+        Result:
+        For cs_flag= 0
+
+        Network        Global Statistics                   Protocol Statistics (for the first node)
+                   Messages       Messages      Frame         tx_frames  success     dropped    rx_frames
+                   generated      delivered     collisions               frames      frames
+
+        LAN-5       2883           2772          1173           605        586       19          519
+        LAN-10      5743           4856          4585           568        496       72          481
+        LAN-15      8632           6280          7964           562        440       122         411
+        LAN-20      11623          7181          11243          587        401       186         363
+
+
+        For cs_flag= 1
+
+        Network        Global Statistics                   Protocol Statistics (for the first node)
+                   Messages       Messages      Frame         tx_frames  success     dropped    rx_frames
+                   generated      delivered     collisions               frames      frames
+
+        LAN-5       2893           2893          0              589        589       0          570
+        LAN-10      5891           5891          0              584        584       0          620 
+        LAN-15      8681           8681          0              587        587       0          557
+        LAN-20      11757          11757         0              605        605       0          573
+
+        With cs_flag set, the performance has been obviously improved such that no frame collisions occurs
+        and no frame would be dropped.
+
+Acknowledgments:
+        lab3-lan.c
+        http://webdocs.cs.ualberta.ca/~c313/cnet-3.3.4-html/api.html

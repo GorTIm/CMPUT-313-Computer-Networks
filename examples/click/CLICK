@@ -1,0 +1,18 @@
+
+compile		 = "click.c"
+winopen		 = true
+probframecorrupt = 2
+
+host perth {
+    x=100, y=50
+    winx=0, winy=100
+    propagationdelay = 100ms
+    link to sydney
+}
+
+host sydney {
+    x=500, y=50
+    winx=550, winy=100
+    propagationdelay = 2s
+    link to perth
+}

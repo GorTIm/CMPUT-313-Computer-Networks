@@ -1,0 +1,18 @@
+
+/*  This simple example demonstrates how a node can catch a change
+    in a link's state with EV_LINKSTATE.
+    If a link is changed with the right mouse button, or if linkmtbf
+    and linkmttr are set in the topology file, link_changed() will be
+    called with its third parameter set to the number of the link whose
+    state has changed.
+
+    This example determines if, and for how long, a node is isolated 
+    from the rest of the network.
+ */
+
+compile		= "linkstate.c"
+
+linkmtbf	= 20s
+linkmttr	=  5s
+
+#include "AUSTRALIA.MAP"

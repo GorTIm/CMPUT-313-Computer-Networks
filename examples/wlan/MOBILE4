@@ -1,0 +1,12 @@
+
+mapwidth	= 400
+mapheight	= 400
+
+icontitle	= "%n"
+minmessagesize	= 1000bytes
+maxmessagesize	= 1000bytes
+
+compile		= "mobile4.c newswalk.o"
+
+mobile mobile0 { wlan { } }
+mobile mobile1 { wlan { } }

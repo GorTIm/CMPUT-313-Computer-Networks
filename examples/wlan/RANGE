@@ -1,0 +1,18 @@
+
+compile		= "range.c"
+
+mapwidth	= 600
+mapheight	= 100
+
+icontitle	= "%n"
+
+mobile iPod0 { wlan { } }
+mobile iPod1 { wlan { } }
+mobile iPod2 { wlan { } }
+mobile iPod3 { wlan { } }
+mobile iPod4 { wlan { } }
+mobile iPod5 { wlan { } }
+mobile iPod6 { wlan { } }
+mobile iPod7 { wlan { } }
+mobile iPod8 { wlan { } }
+mobile iPod9 { wlan { } }

@@ -1,0 +1,12 @@
+compile   = "showleds.c"
+bandwidth = 56Kbps
+
+host perth {
+    x=80, y=50
+    link to melbourne
+}
+
+host melbourne {
+    east east east east of perth
+    link to perth
+}

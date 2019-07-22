@@ -1,0 +1,58 @@
+LAB1
+
+NAME:Weihao Han
+ID:1446915
+
+
+
+Q1:
+
+
+  typedef struct {
+       CnetNodeType node_t;        // node type, e.g., NT_ROUTER
+       CnetTimerID mytimer;       // a timer identifier
+       CnetAddr   src, dest;     // user defined node addresses (not node numbers)
+       CnetPosition   ap_pos;        // the (x,y,z)-coordinates of an access point
+       uint16_t  code;          // stores the return value of function CNET_ccitt()
+} PACKET;
+
+Q2:
+   int64_t current_simu_time=nodeinfo.time_in_usec;
+   printf("The current simulation time for this node is %ld \n",current_simu_time)
+   
+
+Q3:
+  
+   (a)delta is the time for a message of minimal size to make turnaround between two nodes.
+
+   (b)To make delta approximately equal to 1.5 second, one way is to imcrease the minmessagesize to about 4550 bytes.
+   
+
+Q4:
+   Yes,thet can be different. Since f is of type FRAME, then sizeof(f) is equal to sizeof(FRAME). However, FRAME_SIZE(f) is equal to sum of (sizeof(FRAME) - sizeof(MSG)) and f.len, and that is not necessary equal to sizeof(FRAME).
+
+
+Q5:
+   The checksum for these two message is:65325 .
+
+Q6:
+   It will cause a runtime error and program stop continuing. 
+   
+   We can modify the code to let it never call CNET_exit. For instance, when CHECK marco encounter, we dont call 
+CNET_exit.Instead, we use a print function to print some detailed error reporting by making use of cnet_errname[] and cnet_errstr[].
+
+
+Q7:
+
+
+    f.checksum  = CNET_ccitt((unsigned char *)&f, (int)length);
+    Once the checksum is calculated in transmitting frame, it would be store. When the  physical layer of destination node is ready, a CNET_ccit function would be called and another checksum will be generated.
+    if(CNET_ccitt((unsigned char *)&f, (int)len) != checksum) {
+        printf("\t\t\t\tBAD checksum - frame ignored\n");
+        return;           // bad checksum, ignore frame
+    }
+    By comparing these two checksum, we can figure out corrupted frames if they are not equal.
+
+
+
+

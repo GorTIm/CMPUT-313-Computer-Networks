@@ -1,0 +1,77 @@
+                              report for Assignment2
+Name:WEIHAO HAN
+ID:1446915
+
+
+Objectives: 
+
+Get uesd to event-driven programming style in cnet, try to implement RDT protocol.
+Learn to analyze statistics in simulation on CNET.
+
+Part 1: 
+
+lab2-p1.c works stably without timeout error occurs
+
+Part 2: 
+
+Assume that 1KBytes = 1000Bytes for convenience
+
+           Messages correctly delivered to AL      KBytes correctly delivered to AL    Average throughput
+
+W18-NETa                  47                                      282                        0.094 
+W18-NETb                  37                                      555                        0.074
+W18-NETc                  30                                      180                        0.06
+W18-NETd                  17                                      102                        0.024
+
+
+             Estimated Nr                          Estimated Thr with_errors
+
+W18-NETa          1                                     0.095
+W18-NETb          1                                     0.106
+W18-NETc          2                                     0.046
+W18-NETd          4                                     0.023
+
+Explaination:
+The message delivered to AL can be obtained by global statistics. Multiplying this messages size defined
+in topology can get the KBytes to AL. Divide Msg to AL by  Tsim can get the avg throughput.
+
+For estimated Nr, check the pro of corrupt and frameloss in topology and then calculate with
+Nr = 1/1-p where p is the probability. Ttrans = messages size/bandwidth, and by making use of 
+messagerate and propagationdelay time, we can get RTT and then eventually Throughput error-free.
+Dividing Thr error-free by Nr can we obtain Thr with-error.
+
+Comment:
+The results in b shows significant difference because we assume the message size is the average of 
+minsize and maxsize, while the actual simulation may not necessary follow this especially with few 
+tries.
+
+Similarly, in case c, since the sample size of msg is small, the probability of frameloss may not be 
+exactly 1/2.
+
+
+Part 3:
+
+Design Overview:
+1.Both sender and receiver have a buffer so that pipelining and out-of -order pkt storage is available
+2.The sender has timer of oldest transmitted but not ack pkt. Once timeout, re-transmits only that pkt
+3.Receiver sends cumulative ack which indicates the last correctly received packet
+4.Each pkt has distinctive seq and ack number which indicates their type.
+5.Nodes works as both sender and receiver.
+Overall, this protocol enables reliable data transfer with availability to detect frameloss
+
+Program Status:
+The program works well when sendWin >= recWin.
+Since the hint for updating sendBase was missing, it take a long time to find that sendBase didnt change 
+which prevent receiver to receive pkts.
+Besides, the amount by which sendBase(rcvBase) increase is also a key problem.
+
+Testing: 
+Test the program by 2-node topology with different combination of proframloss,sendWin,rcvWin.
+For instance, sendWin=rcvWin=1,sendWin=rcvWin>1,sendWin>rcvWin=1,sendWin>rcvWin>1,and provide proframloss or not.
+Changing the messagerate and propagationdelay are also possible way to test the reliability.
+
+
+Acknowledgments:
+http://webdocs.cs.ualberta.ca/~c313/cnet-3.3.4-html/index.html
+
+
